@@ -107,11 +107,11 @@ class _MapScreenState extends State<MapScreen> {
   Future<void> moveToArea(String areaName) async {
     final String overpassUrl = 'https://overpass-api.de/api/interpreter';
     final String overpassQuery = '''
-    [out:json];
-    area["name" = "$areaName"];
-    node(pivot);
-    out center;
-  ''';
+      [out:json];
+      area["name" = "$areaName"];
+      node(pivot);
+      out center;
+    ''';
 
     try {
       final response = await http.post(Uri.parse(overpassUrl),
